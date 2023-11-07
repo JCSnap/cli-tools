@@ -9,6 +9,16 @@ checkduplicates ~/Downloads
 ```
 to list out all the duplicate files in your Downloads folder. This command will let you know which files have duplicates and how many duplicates there are.
 
+### askgpt
+Ask questions to chatgpt in the terminal, optimised for short answers for questions about command line usage.
+```
+askgpt [QUESTION]
+```
+For example:
+```
+askgpt how to find and replace in vim
+```
+
 
 ## Setting up
 After git cloning this project. Build it with
