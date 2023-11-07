@@ -19,11 +19,28 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Skip the first argument, which is the name of the program
     let message = args[1..].join(" ");
 
+    let system_message = "You are a command line expert. You will respond with a short one line message.";
+
+
+
+
+
+
+
+
+
     log::info!("Sending message: {}", message);
 
     let req = ChatCompletionRequest::new(
         chat_completion::GPT4.to_string(),
-        vec![chat_completion::ChatCompletionMessage {
+        vec![
+        chat_completion::ChatCompletionMessage {
+            role: chat_completion::MessageRole::system,
+            content: String::from(system_message),
+            name: None,
+            function_call: None,
+        },
+        chat_completion::ChatCompletionMessage {
             role: chat_completion::MessageRole::user,
             content: message,
             name: None,
@@ -34,7 +51,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     log::info!("Received response: {:?}", result);
 
-    println!("{}", result.choices[0].message.content.unwrap_or_default());
+    println!("{}", result.choices[0].message.content.clone().unwrap_or_default());
     Ok(())
 }
 
