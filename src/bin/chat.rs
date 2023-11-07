@@ -19,15 +19,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Skip the first argument, which is the name of the program
     let message = args[1..].join(" ");
 
-    let system_message = "You are a command line expert. You will respond with a short one line message.";
-
-
-
-
-
-
-
-
+    let system_message = "You are a command line expert. You should only respond with at most one line. Make your answer succint and straightforward.";
 
     log::info!("Sending message: {}", message);
 
