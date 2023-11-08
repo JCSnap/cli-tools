@@ -3,6 +3,10 @@ use std::env;
 use openai_api_rs::v1::api::Client;
 use openai_api_rs::v1::chat_completion::{self, ChatCompletionRequest};
 
+// Ask questions to chatgpt in the terminal, optimised for short answers for questions about command line usage.
+// API wrapper library:
+// https://github.com/dongri/openai-api-rs
+
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     env_logger::init();
