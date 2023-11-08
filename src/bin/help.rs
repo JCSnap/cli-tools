@@ -122,7 +122,7 @@ fn main() {
 }
 
 fn print_common_commands() {
-    let common_commands = vec![LSOF_MESSAGE, WHICH_MESSAGE, KILL_MESSAGE, CHMOD_MESSAGE, JAVAFX_MESSAGE];
+    let common_commands = vec![LSOF_MESSAGE, WHICH_MESSAGE, KILL_MESSAGE, CHMOD_MESSAGE, JAVAFX_MESSAGE, CARGO_RUN_MESSAGE, CARGO_BUILD_MESSAGE];
     for command in common_commands {
         println!("{}", command);
     }
