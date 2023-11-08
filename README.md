@@ -29,8 +29,22 @@ For example:
 askgpt how to find and replace in vim
 ```
 
+**Note**: make sure you do the following step before you `cargo build --release` to set up your openai api key, which is required for this command.  
+You can use vim or any text editor.
+```
+cd ~
+vim .env
+```
+Insert your api key:
+```
+OPENAI_API_KEY="YOUR OWN API KEY"
+```
+
+If you do not wish to set up your .env in your home directory, you can set it wherever you want, just make sure that change the path in `cli-tools/src/bin/askgpt.rs` to retrieve the key from your exact path. Once you have set up your api key, you can now proceed to the [Setting up](#setting-up) section.
+
 ## Setting up
-After git cloning this project. Build it with
+Git clone this project. Then build the project (Note that some commands like askgpt has special instructions to set up before you can proceed with the following step):
+
 ```
 cargo build --release
 ```
