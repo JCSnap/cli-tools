@@ -99,8 +99,8 @@ cargo run --bin <file>(without .rs)
 "#;
 
 pub const CARGO_BUILD_MESSAGE : &str = r#"
-Build a rust file
-cargo build --bin <file>(without .rs)
+Build all rust files
+cargo build --release
 "#;
 
 fn main() {
