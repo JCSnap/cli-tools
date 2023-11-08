@@ -7,6 +7,7 @@ fn main() -> std::io::Result<()> {
     let args: Vec<String> = env::args().collect();
     let path = Path::new(&args[1]);
     let mut file_map = HashMap::new();
+    let mut total_duplicates = 0;
 
     for entry in fs::read_dir(path)? {
         let entry = entry?;
@@ -27,9 +28,12 @@ fn main() -> std::io::Result<()> {
 
     for (file, count) in file_map {
         if count > 1 {
+            total_duplicates += count - 1;
             println!("{} has {} duplicates", file, count - 1);
         }
     }
+
+    println!("Directory {} has {} duplicates", path.display(), total_duplicates);
 
     Ok(())
 }
