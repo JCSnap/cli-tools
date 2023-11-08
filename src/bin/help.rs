@@ -21,6 +21,7 @@ help 1
 // ==========================
 pub const CHECKDUPLICATES_MESSAGE : &str = r#"
 checkduplicates: checks for duplicate files in a directory
+
 USAGE:
 ======
 checkduplicates <directory>
@@ -33,6 +34,7 @@ checkduplicates ~/Downloads
 
 pub const ASKGPT_MESSAGE : &str = r#"
 askgpt: asks questions to gpt in the terminal
+
 USAGE:
 ======
 askgpt <question>
