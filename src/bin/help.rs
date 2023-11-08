@@ -58,7 +58,6 @@ Enter help to see the list of available commands and their indices.
 fn main() {
     let args: Vec<String> = env::args().collect();
     if args.len() == 1 {
-        println!("{}", args[0]);
         // check if args[0] contains help
         // we can't use args[0] == "help" because args[0] is the path to the executable
         if args[0].contains("help") {
