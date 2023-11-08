@@ -1,4 +1,4 @@
-use dotenv::dotenv;
+
 use std::env;
 use openai_api_rs::v1::api::Client;
 use openai_api_rs::v1::chat_completion::{self, ChatCompletionRequest};
