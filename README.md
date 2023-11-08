@@ -5,6 +5,7 @@ This is a collection of my cli tools for my terminal, built with rust for me to 
 - [Tools](#tools)
     - [checkduplicates](#checkduplicates)
     - [askgpt](#askgpt)
+    - [help](#help)
 - [Setting up](#setting-up)
 - [Future plans](#future-plans)
 - [Potential issues](#potential-issues)
@@ -13,7 +14,7 @@ This is a collection of my cli tools for my terminal, built with rust for me to 
 Here are the descriptions of the various tools in this repository and how to use each of them.
 
 ### checkduplicates
-Check for file duplicates in the directory stated. For example, use the following command
+Check for file duplicates in the directory stated. For example, use the following command.
 ```
 checkduplicates ~/Downloads
 ```
@@ -41,6 +42,9 @@ OPENAI_API_KEY="YOUR OWN API KEY"
 ```
 
 If you do not wish to set up your .env in your home directory, you can set it wherever you want, just make sure that change the path in `cli-tools/src/bin/askgpt.rs` to retrieve the key from your exact path. Once you have set up your api key, you can now proceed to the [Setting up](#setting-up) section.
+
+### help
+Provide documentation and instructions for all the available commands.
 
 ## Setting up
 Git clone this project. Then build the project (Note that some commands like askgpt has special instructions to set up before you can proceed with the following step):
