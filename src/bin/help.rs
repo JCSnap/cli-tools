@@ -93,6 +93,16 @@ Run a jar file with JavaFX
 java --module-path /Users/jcjustin/Downloads/javafx-sdk-17.0.8/lib --add-modules=javafx.controls,javafx.fxml -jar <jarfile>
 "#;
 
+pub const CARGO_RUN_MESSAGE : &str = r#"
+Run a rust file
+cargo run --bin <file>(without .rs)
+"#;
+
+pub const CARGO_BUILD_MESSAGE : &str = r#"
+Build a rust file
+cargo build --bin <file>(without .rs)
+"#;
+
 fn main() {
     let args: Vec<String> = env::args().collect();
     if args.len() == 1 {
