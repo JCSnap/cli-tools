@@ -11,10 +11,14 @@ ALL AVAILABLE COMMANDS:
 FOR MORE INFO ON A COMMAND, TYPE:
 =================================
 help <index>
+OR
+help <command>
 
 EXAMPLE:
 ========
 help 1
+OR
+help checkduplicates
 "#;
 
 // Messages for each command    
@@ -66,13 +70,10 @@ fn main() {
             println!("{}", HELP_MESSAGE);
         }
     } else {
-        match args[1].parse::<usize>() {
-            Ok(number) => match number {
-                1 => println!("{}", CHECKDUPLICATES_MESSAGE),
-                2 => println!("{}", ASKGPT_MESSAGE),
+        match args[1].as_str() {
+                "1" | "checkduplicates" => println!("{}", CHECKDUPLICATES_MESSAGE),
+                "2" | "askgpt" => println!("{}", ASKGPT_MESSAGE),
                 _ => println!("{}", INDEX_ERROR_MESSAGE),
-            },
-            Err(_) => println!("{}", INDEX_ERROR_MESSAGE),
         }
     }
 }
