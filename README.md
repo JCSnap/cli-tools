@@ -5,9 +5,9 @@ This is a collection of my cli tools for my terminal, built with rust for me to 
 - [Tools](#tools)
     - [checkduplicates](#checkduplicates)
     - [askgpt](#askgpt)
-- [Setting up](#swtting-up)
+- [Setting up](#setting-up)
 - [Future plans](#future-plans)
--[Potential issues](#potential-issues)
+- [Potential issues](#potential-issues)
 
 ## Tools
 Here are the descriptions of the various tools in this repository and how to use each of them.
