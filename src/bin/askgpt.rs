@@ -11,7 +11,8 @@ use openai_api_rs::v1::chat_completion::{self, ChatCompletionRequest};
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     env_logger::init();
     // Make sure that you have a .env file in the root directory of the project, with your OPENAI_API_KEY
-    dotenv::from_path("/Users/jcjustin/Projects/cli-tools/.env").ok();
+    // NOTE that the current path is HARDCODED. CHANGE IT TO YOUR OWN PATH.
+    dotenv::from_path("/Users/jcjustin/.env").ok();
     let api_key = env::var("OPENAI_API_KEY").expect("OPENAI_API_KEY not found in .env file");
     let client = Client::new(api_key);
 
