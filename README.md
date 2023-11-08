@@ -44,7 +44,15 @@ OPENAI_API_KEY="YOUR OWN API KEY"
 If you do not wish to set up your .env in your home directory, you can set it wherever you want, just make sure that change the path in `cli-tools/src/bin/askgpt.rs` to retrieve the key from your exact path. Once you have set up your api key, you can now proceed to the [Setting up](#setting-up) section.
 
 ### help
-Provide documentation and instructions for all the available commands.
+Provide documentation and instructions for all the available commands. Type:
+```
+help
+```
+for more information. Other help commands will be displayed.
+```
+help others
+```
+contain other help commands that I use occasionally but cannot remember. It is unique to myself so you can edit it for your use cases in `src/bin/help.rs`
 
 ## Setting up
 Git clone this project. Then build the project (Note that some commands like askgpt has special instructions to set up before you can proceed with the following step):
