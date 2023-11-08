@@ -14,7 +14,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     env_logger::init();
     // Make sure that you have a .env file in the root directory of the project, with your OPENAI_API_KEY
     // NOTE that the current path is HARDCODED. CHANGE IT TO YOUR OWN PATH.
-    dotenv::from_path("/Users/jcjustin/.env").ok();
+    let home_dir = env::var("HOME").expect("Could not find the HOME environment variable");
+    let env_path = format!("{}/.env", home_dir);
+    dotenv::from_path(env_path.as_str()).ok();
+
     let api_key = env::var("OPENAI_API_KEY").expect("OPENAI_API_KEY not found in .env file");
     let client = Client::new(api_key);
 
