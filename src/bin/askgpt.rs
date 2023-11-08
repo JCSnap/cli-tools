@@ -7,6 +7,8 @@ use openai_api_rs::v1::chat_completion::{self, ChatCompletionRequest};
 // API wrapper library:
 // https://github.com/dongri/openai-api-rs
 
+pub const SYSTEM_MESSAGE: &str = "You are a programming expert with deep knowledge in CLI and programs. You should only respond with at most one line. Make your answer succint and straightforward.";
+
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     env_logger::init();
@@ -24,8 +26,6 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Skip the first argument, which is the name of the program
     let message = args[1..].join(" ");
 
-    let system_message = "You are a command line expert. You should only respond with at most one line. Make your answer succint and straightforward.";
-
     log::info!("Sending message: {}", message);
 
     let req = ChatCompletionRequest::new(
@@ -33,7 +33,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         vec![
         chat_completion::ChatCompletionMessage {
             role: chat_completion::MessageRole::system,
-            content: String::from(system_message),
+            content: String::from(SYSTEM_MESSAGE),
             name: None,
             function_call: None,
         },
