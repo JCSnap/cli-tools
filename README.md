@@ -29,6 +29,7 @@ For example:
 ```
 askgpt how to find and replace in vim
 ```
+<img width="561" alt="image" src="https://github.com/JCSnap/cli-tools/assets/111076731/2677a5d3-57ac-45ad-9d5d-dee954ac12bb">
 
 **Note**: make sure you do the following step before you `cargo build --release` to set up your openai api key, which is required for this command.  
 You can use vim or any text editor.
