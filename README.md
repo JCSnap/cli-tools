@@ -5,6 +5,7 @@ This is a collection of my cli tools for my terminal, built with rust for me to 
 - [Tools](#tools)
     - [checkduplicates](#checkduplicates)
     - [askgpt](#askgpt)
+    - [pdf2images](#pdf2images)
     - [help](#help)
 - [Setting up](#setting-up)
 - [Future plans](#future-plans)
@@ -43,6 +44,27 @@ OPENAI_API_KEY="YOUR OWN API KEY"
 ```
 
 If you do not wish to set up your .env in your home directory, you can set it wherever you want, just make sure that change the path in `cli-tools/src/bin/askgpt.rs` to retrieve the key from your exact path. Once you have set up your api key, you can now proceed to the [Setting up](#setting-up) section.
+
+### pdf2images
+Convert PDF pages to images. Each page of the PDF will be converted to a PNG image. This converts pdf into a format that is readable by Claude Code, without losing information that other tools like `pdftotext` or pdf to markdown.
+```
+pdf2images <pdf_file> [output_directory]
+```
+For example:
+```
+pdf2images document.pdf
+```
+This will create a directory called `document-images` in the current directory and save each page as `document-1.png`, `document-2.png`, etc.
+
+You can also specify a custom output directory:
+```
+pdf2images document.pdf my-images
+```
+
+**Note**: This tool requires `poppler-utils` to be installed. Install it with:
+```
+brew install poppler
+```
 
 ### help
 Provide documentation and instructions for all the available commands. Type:
